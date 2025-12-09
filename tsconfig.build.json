@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/apps/cash-out",
+    "rootDir": "./apps/cash-out/src"
+  },
+  "include": [
+    "apps/cash-out/src/**/*.ts"
+  ]
+}

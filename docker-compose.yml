@@ -1,0 +1,16 @@
+services:
+  compliance-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    container_name: sttart-cash-out-service
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "3002:3002"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run start:dev
