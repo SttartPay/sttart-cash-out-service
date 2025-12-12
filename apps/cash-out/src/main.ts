@@ -36,6 +36,7 @@ async function bootstrap() {
     );
     app.useGlobalInterceptors(new SuccessResponseInterceptor());
     app.useGlobalFilters(new ApiExceptionFilter(logger));
+    app.setGlobalPrefix('v1/api/cash-out');
     app.enableCors();
     const config = app.get(ConfigService);
     const port = config.get('PORT') || 3002;

@@ -25,8 +25,8 @@ npm run start:dev
 - `HIGHER_INTERNAL_TRANSFER_EMAIL`
 
 ## Endpoints
-- `POST /v1/internal-transfers` — cria transferencia interna via Higher (e-mail fixo via env)
-- `GET /health` — health check
+- `POST /v1/api/cash-out/internal-transfers` — cria transferencia interna via Higher (e-mail fixo via env)
+- `GET /v1/api/cash-out/health` — health check
 
 ## Webhook
 - `ValidationPipe` global com `whitelist` e `forbidNonWhitelisted`.
@@ -55,7 +55,7 @@ docker push <account>.dkr.ecr.<regiao>.amazonaws.com/sttart-cash-out-service:stg
 ## Task definition (ECS/App Runner)
 - Container image: `<account>.dkr.ecr.<regiao>.amazonaws.com/sttart-cash-out-service:<tag>`
 - Comando: `node dist/apps/cash-out/main.js`
-- Porta: 3002 (health check em `/health`)
+- Porta: 3002 (health check em `/v1/api/cash-out/health`)
 - Usuario: `node`
 - Envs: `NODE_ENV=production`, `PORT=3002`, `DATA_SERVICE_URL`, `HIGHER_API_BASE_URL`, `HIGHER_API_KEY`, `HIGHER_TENANT`, `HIGHER_SERVICE_ACCOUNT_NAME`, `HIGHER_AUTH_BASIC`, `HIGHER_INTERNAL_TRANSFER_EMAIL`
 
