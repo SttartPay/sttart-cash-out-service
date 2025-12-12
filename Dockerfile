@@ -25,5 +25,5 @@ COPY --chown=node:node package*.json ./
 COPY --from=prod-deps --chown=node:node /usr/src/app/node_modules ./node_modules
 COPY --from=build --chown=node:node /usr/src/app/dist ./dist
 USER node
-EXPOSE 3002
+EXPOSE 3006
 CMD ["node", "dist/apps/cash-out/main.js"]

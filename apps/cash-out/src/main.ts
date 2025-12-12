@@ -8,7 +8,7 @@ import { Logger } from 'nestjs-pino';
 import { AppModule } from './app.module';
 import { ApiExceptionFilter } from './shared/http/api-exception.filter';
 import { SuccessResponseInterceptor } from './shared/http/success-response.interceptor';
-import { Request, Response, NextFunction} from 'express'
+import { Request, Response, NextFunction } from 'express';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule, { bufferLogs: true });
@@ -42,6 +42,6 @@ async function bootstrap() {
     const host = '0.0.0.0';
 
     await app.listen(port, host);
-    logger.log(`🚀 Sttart cash-out Service rodando em http://localhost:${port}`);
+    logger.log(`Sttart cash-out service rodando em http://localhost:${port}`);
 }
 bootstrap();
