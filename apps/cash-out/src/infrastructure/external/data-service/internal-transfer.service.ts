@@ -38,7 +38,7 @@ export class InternalTransferDataService implements InternalTransferDataServiceP
 
         try {
             const response = await this.http.post<ApiResponse<InternalTransferResponse>>(
-                `${this.baseUrl}/v1/internal-transfers`,
+                `${this.baseUrl}/v1/api/data/internal-transfers`,
                 body,
                 {
                     headers: this.buildHeaders(),
