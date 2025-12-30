@@ -10,8 +10,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "test:e2e": "jest --config jest-e2e.json",
-    "lint": "eslint . --ext .ts"
+    "test:e2e": "jest --config jest-e2e.json"
+
   },
   "dependencies": {
     "@aws-sdk/client-sqs": "^3.654.0",
