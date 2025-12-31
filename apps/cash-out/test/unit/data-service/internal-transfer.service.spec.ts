@@ -30,7 +30,7 @@ describe('InternalTransferDataService', () => {
         await service.createInternalTransfer(payload);
 
         expect(http.post).toHaveBeenCalledWith(
-            `${baseUrl}/v1/internal-transfers`,
+            `${baseUrl}/v1/api/data/internal-transfers`,
             payload,
             {
                 headers: { 'Content-Type': 'application/json' },
